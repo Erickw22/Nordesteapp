@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Perfil from './Perfil';
-import Home from './Home';
 import Ecopoints from './Ecopoints';
 import Chat from './Chat';
 import Cadastrar from './Cadastrar';
@@ -14,22 +13,22 @@ const Tab = createBottomTabNavigator();
 export default function Principal() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Ecopoints"
       tabBarOptions={{
         activeTintColor: '#30687A',
       }}
     >
       <Tab.Screen
-        name="Busca"
-        component={Home}
+        name="Ecopoints"
+        component={Ecopoints}
         options={{
-          headerShown: false,
-          tabBarLabel: 'Home',
+          tabBarLabel: 'Ecopoints',
+          headerTintColor:"#30687A",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="map-legend" color={color} size={size} />
           ),
         }}
-      />
+      />  
       <Tab.Screen
         name="Chat"
         component={Chat}
@@ -38,17 +37,6 @@ export default function Principal() {
           tabBarLabel: 'Chat',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="chat" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Ecopints"
-        component={Ecopoints}
-        options={{
-          headerShown: false,
-          tabBarLabel: 'Ecopints',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="map-legend" color={color} size={size} />
           ),
         }}
       />

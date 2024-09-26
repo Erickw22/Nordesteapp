@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { Button } from 'react-native-elements';
+import { Button, Text } from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
+import styles from '../style/MainStyle';
 
 export default function Perfil({navigation}) {
 
@@ -21,16 +22,20 @@ export default function Perfil({navigation}) {
 
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Profile!</Text>
+        <View>          
+
+        </View>
         <Button
             icon={
               <Icon
+              
                 name="check"
                 size={15}
                 color="white"
               />
             }
             title="Sair"
+            buttonStyle={styles.button}
             onPress={() => logout(navigation)}
           />
       </View>

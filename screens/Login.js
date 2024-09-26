@@ -76,16 +76,16 @@ export default function Login({navigation}) {
       { !isLoadingToken && 
         <>
           <Image style={{ width: 150, height: 150, padding: 10 }}
-          source={require('../assets//logos/circle7.png')}/>
+          source={require('../assets//logos/circle4.png')}/>
           <Input
             placeholder="E-mail"
-            leftIcon={{ type: 'font-awesome', name: 'envelope' }}
+            rightIcon={{ type: 'font-awesome', name: 'envelope' }}
             onChangeText={value => setEmail(value)}
             keyboardType="email-address"
             />
           <Input
             placeholder="Sua senha"
-            leftIcon={{ type: 'font-awesome', name: 'lock' }}
+            rightIcon={{ type: 'font-awesome', name: 'lock' }}
             onChangeText={value => setPassword(value)}
             secureTextEntry={true}
             />
@@ -104,7 +104,7 @@ export default function Login({navigation}) {
                 />
               }
               title="Entrar"
-              buttonStyle={specificStyle.button}
+              buttonStyle={styles.button}
               onPress={() => entrar()}
             />
           }
@@ -118,7 +118,7 @@ export default function Login({navigation}) {
               />
             }
             title=" Cadastrar"
-            buttonStyle={specificStyle.button}
+            buttonStyle={styles.button}
             onPress={() => cadastrar()}
           />
         </>

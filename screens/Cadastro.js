@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert } from 'react-native';
+import { Alert, Image } from 'react-native';
 import { Platform } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 import { StyleSheet, View } from 'react-native';
@@ -106,8 +106,10 @@ export default function Cadastro({navigation}) {
     behavior={Platform.OS == "ios" ? "padding" : "height"}
     style={[styles.container, specificStyle.specificContainer]}
     keyboardVerticalOffset={80}>
-      <ScrollView style={{width: "100%"}}>
-      <Text h3>Cadastre-se</Text>
+      <ScrollView style={{width: "100%", height:"60%"}}>
+      <Image style={{ width: 150, height: 100, padding: 10 }}
+          source={require('../assets//logos/circle4.png')}/>
+      <Text h2>Cadastrar-se</Text>
       <Input
         placeholder="E-mail"
         onChangeText={value => {
@@ -195,7 +197,7 @@ export default function Cadastro({navigation}) {
           />
         }
         title="Salvar"
-        buttonStyle={specificStyle.button}
+        buttonStyle={styles.button}
         onPress={() => salvar()}
       />
     }
@@ -212,7 +214,10 @@ export default function Cadastro({navigation}) {
 const specificStyle = StyleSheet.create({
   specificContainer: {
     backgroundColor: "#fff",
-    padding: 10
+    padding: 1,
+    alignItems:"center",
+    alignSelf:"auto",
+    alignContent:"center"
   },
   button: {
     width: "100%",
